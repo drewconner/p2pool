@@ -250,7 +250,10 @@ def main(args, net, datadir_path, merged_urls, worker_endpoint):
         if args.irc_announce:
             from twisted.words.protocols import irc
             class IRCClient(irc.IRCClient):
-                nickname = 'p2pool%02i' % (random.randrange(100),)
+                if args.irc_nickname:
+                    nickname = args.irc_nickname
+                else:
+                    nickname = 'p2pool%02i' % (random.randrange(100),)
                 channel = net.ANNOUNCE_CHANNEL
                 def lineReceived(self, line):
                     if p2pool.DEBUG:
@@ -393,6 +396,9 @@ def run():
     parser.add_argument('--irc-announce',
         help='announce any blocks found on irc://irc.freenode.net/#p2pool',
         action='store_true', default=False, dest='irc_announce')
+    parser.add_argument('--irc-nickname',
+        help='nickname to use on irc channel',
+        action='store', default=None, dest='irc_nickname')
     parser.add_argument('--no-bugreport',
         help='disable submitting caught exceptions to the author',
         action='store_true', default=False, dest='no_bugreport')
