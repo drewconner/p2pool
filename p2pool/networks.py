@@ -123,42 +123,23 @@ nets = dict(
         VERSION_WARNING=lambda v: 'Upgrade Terracoin to >= 0.8.0.1!' if v < 80001 else None,
     ),
     
-    # worldcoin=math.Object(
-    #     PARENT=networks.nets['worldcoin'],
-    #     SHARE_PERIOD=15, # seconds target spacing
-    #     NEW_SHARE_PERIOD=15, # seconds
-    #     CHAIN_LENGTH=24*60*60//15, # shares
-    #     REAL_CHAIN_LENGTH=3*60*60//15, # shares
-    #     TARGET_LOOKBEHIND=200, # shares coinbase maturity
-    #     SPREAD=60, # blocks
-    #     NEW_SPREAD=60, # blocks
-    #     IDENTIFIER='793D870E4902D996'.decode('hex'),
-    #     PREFIX='20E8B6037B0F98C7'.decode('hex'),
-    #     P2P_PORT=48907,
-    #     MIN_TARGET=0,
-    #     MAX_TARGET=2**256//2**20 - 1,
-    #     PERSIST=False,
-    #     WORKER_PORT=9422,
-    #     BOOTSTRAP_ADDRS='wdc.xpool.net wdc.cryptopool.co'.split(' '),
-    #     ANNOUNCE_CHANNEL='#cryptopool',
-    #     VERSION_CHECK=lambda v: True,
-    # ),
-   worldcoin=math.Object(
+    worldcoin=math.Object(
         PARENT=networks.nets['worldcoin'],
         SHARE_PERIOD=15, # seconds target spacing
-        CHAIN_LENGTH=24*60*60//10, # shares
-        REAL_CHAIN_LENGTH=24*60*60//10, # shares
+        CHAIN_LENGTH=24*60*60//15, # shares
+        REAL_CHAIN_LENGTH=3*60*60//15, # shares
         TARGET_LOOKBEHIND=200, # shares coinbase maturity
-        SPREAD=30, # blocks
-        IDENTIFIER='e021a7b8c602421f'.decode('hex'),
-        PREFIX='e280193ae6b8617b'.decode('hex'),
+        SPREAD=60, # blocks
+        NEW_SPREAD=60, # blocks
+        IDENTIFIER='793D870E4902D996'.decode('hex'),
+        PREFIX='20E8B6037B0F98C7'.decode('hex'),
         P2P_PORT=48907,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
         WORKER_PORT=9422,
-        BOOTSTRAP_ADDRS='rav3n.dtdns.net wdc.cryptopool.co 198.23.244.216:48907 178.94.109.250:48907 61.144.91.38:48907 173.67.61.119:8541 66.71.246.74:48907 178.94.42.157:48907 37.11.46.125:48907 66.172.10.55:48907 67.189.26.97:48907 178.94.105.190:48907 207.12.89.101:48907 110.174.192.158:48907 93.186.200.124:48907 216.177.81.88:48907 202.104.41.58:48907 76.74.238.175:18122 113.240.247.242:48907 37.11.60.222:48907 199.188.206.150:48907 113.240.247.246:48907 54.229.16.203:48907 78.27.191.182:18122 195.56.77.176:48907 93.186.200.124:18122 128.220.147.219:8541 76.74.238.175:48907 37.11.40.94:48907 173.67.61.119:8535 62.75.216.94:48907 212.48.67.50:8336 97.74.42.79:48907 0.0.0.0:48807 212.48.67.50:48907 207.12.89.112:48907 78.27.191.182:48907 216.177.81.88:48807 113.243.46.173:48907 66.172.10.55:19331'.split(' '),
-        ANNOUNCE_CHANNEL='#p2pool-alt',
+        BOOTSTRAP_ADDRS='wdc.xpool.net wdc.cryptopool.co'.split(' '),
+        ANNOUNCE_CHANNEL='#cryptopool',
         VERSION_CHECK=lambda v: True,
     ),
 
