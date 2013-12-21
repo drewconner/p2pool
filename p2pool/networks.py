@@ -123,22 +123,58 @@ nets = dict(
         VERSION_WARNING=lambda v: 'Upgrade Terracoin to >= 0.8.0.1!' if v < 80001 else None,
     ),
     
+    # worldcoin=math.Object(
+#         PARENT=networks.nets['worldcoin'],
+#         SHARE_PERIOD=15, # seconds target spacing
+#         CHAIN_LENGTH=24*60*60//15, # shares
+#         REAL_CHAIN_LENGTH=3*60*60//15, # shares
+#         TARGET_LOOKBEHIND=200, # shares coinbase maturity
+#         SPREAD=60, # blocks
+#         NEW_SPREAD=60, # blocks
+#         IDENTIFIER='793D870E4902D996'.decode('hex'),
+#         PREFIX='20E8B6037B0F98C7'.decode('hex'),
+#         P2P_PORT=48907,
+#         MIN_TARGET=0,
+#         MAX_TARGET=2**256//2**20 - 1,
+#         PERSIST=False,
+#         WORKER_PORT=9422,
+#         BOOTSTRAP_ADDRS='wdc.xpool.net wdc.cryptopool.co'.split(' '),
+#         ANNOUNCE_CHANNEL='#cryptopool',
+#         VERSION_CHECK=lambda v: True,
+#     ),
+    # worldcoin=math.Object(
+    #     PARENT=networks.nets['worldcoin'],
+    #     SHARE_PERIOD=180, # seconds
+    #     CHAIN_LENGTH=24*60*60//10, # shares
+    #     REAL_CHAIN_LENGTH=24*60*60//10, # shares
+    #     TARGET_LOOKBEHIND=200, # shares
+    #     SPREAD=30, # blocks
+    #     IDENTIFIER=''.decode('hex'),
+    #     PREFIX=''.decode('hex'),
+    #     P2P_PORT=48907,
+    #     MIN_TARGET=0,
+    #     MAX_TARGET=2**256//2**20 - 1,
+    #     PERSIST=False,
+    #     WORKER_PORT=9422,
+    #     BOOTSTRAP_ADDRS=''.split(' '),
+    #     ANNOUNCE_CHANNEL='#cryptopool',
+    #     VERSION_CHECK=lambda v: True,
+    # ),
     worldcoin=math.Object(
         PARENT=networks.nets['worldcoin'],
         SHARE_PERIOD=15, # seconds target spacing
-        CHAIN_LENGTH=24*60*60//15, # shares
-        REAL_CHAIN_LENGTH=3*60*60//15, # shares
+        CHAIN_LENGTH=24*60*60//10, # shares
+        REAL_CHAIN_LENGTH=24*60*60//10, # shares
         TARGET_LOOKBEHIND=200, # shares coinbase maturity
-        SPREAD=60, # blocks
-        NEW_SPREAD=60, # blocks
-        IDENTIFIER='793D870E4902D996'.decode('hex'),
-        PREFIX='20E8B6037B0F98C7'.decode('hex'),
+        SPREAD=120, # blocks
+        IDENTIFIER='e021a7b8c602421f'.decode('hex'),
+        PREFIX='e280193ae6b8617b'.decode('hex'),
         P2P_PORT=48907,
         MIN_TARGET=0,
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
         WORKER_PORT=9422,
-        BOOTSTRAP_ADDRS='wdc.xpool.net wdc.cryptopool.co'.split(' '),
+        BOOTSTRAP_ADDRS=''.split(' '),
         ANNOUNCE_CHANNEL='#cryptopool',
         VERSION_CHECK=lambda v: True,
     ),
