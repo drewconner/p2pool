@@ -139,7 +139,7 @@ nets = dict(
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
         WORKER_PORT=9422,
-        BOOTSTRAP_ADDRS='wdc.coinpuddle.com wdc.xpool.net'.split(' '),
+        BOOTSTRAP_ADDRS='wdc.coinpuddle.com wdc.xpool.net us-east1.cryptovein.com'.split(' '),
         ANNOUNCE_CHANNEL='#coinpuddle',
         VERSION_CHECK=lambda v: True,
     ),
@@ -166,10 +166,12 @@ nets = dict(
     dogecoin=math.Object(
         PARENT=networks.nets['dogecoin'],
         SHARE_PERIOD=15, # seconds target spacing
+        NEW_SHARE_PERIOD=15, # seconds target spacing
         CHAIN_LENGTH=12*60*60//15, # shares
         REAL_CHAIN_LENGTH=12*60*60//15, # shares
         TARGET_LOOKBEHIND=20, # shares coinbase maturity
         SPREAD=10, # blocks
+        NEW_SPREAD=10, # blocks
         IDENTIFIER='D0D1D2D3B2F68CD9'.decode('hex'),
         PREFIX='D0D3D4D541C11DD9'.decode('hex'),
         P2P_PORT=8555,
@@ -177,10 +179,11 @@ nets = dict(
         MAX_TARGET=2**256//2**20 - 1,
         PERSIST=False,
         WORKER_PORT=9424,
-        BOOTSTRAP_ADDRS='doge.coinpuddle.com doge.dtdns.net pool.hostv.pl rav3n.dtdns.net p2pool.org'.split(' '),
+        BOOTSTRAP_ADDRS='doge.coinpuddle.com us-east1.cryptovein.com doge.dtdns.net pool.hostv.pl rav3n.dtdns.net p2pool.org'.split(' '),
         ANNOUNCE_CHANNEL='#coinpuddle',
         VERSION_CHECK=lambda v: True,
     ),
+
 )
 for net_name, net in nets.iteritems():
     net.NAME = net_name
