@@ -1,0 +1,3 @@
+[submodule "web-static-extended"]
+	path = web-static-extended
+	url = https://github.com/drewconner/P2PoolExtendedFrontEnd.git
